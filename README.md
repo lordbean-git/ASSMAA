@@ -1,2 +1,2 @@
 # ASSMAA
-Advanced Screen-space Subpixel Morphological Anti-Aliasing
+Advanced Screen-space Subpixel Morphological Anti-Aliasing is an edited version of traditional Subpixel Morphological Anti-Aliasing for ReShade 3.0+. It removes the optional depth edge detection and predication features of the original shader for best performance in multiplayer games and adds two advanced detection methods based on weighing the outputs of both Luminance and Color edge detection against each other in two different ways. ASSMAA also exposes the internal contrast adaptation setting to the user, allowing for finer control over the blurring caused as a side effect of the routine.
