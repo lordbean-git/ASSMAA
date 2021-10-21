@@ -25,7 +25,7 @@
 uniform int EdgeDetectionType < __UNIFORM_COMBO_INT1
 	ui_items = "Luminance edge detection\0Color edge detection\0Both, biasing Clarity\0Both, biasing Anti-Aliasing\0";
 	ui_label = "Edge Detection Type";
-> = 2;
+> = 3;
 
 #ifdef SMAA_PRESET_CUSTOM
 uniform float EdgeDetectionThreshold < __UNIFORM_DRAG_FLOAT1
@@ -210,7 +210,7 @@ float2 SMAAEdgeDetectionWrapPS(
 	else if (EdgeDetectionType == 2)
 		return (SMAAColorEdgeDetectionPS(texcoord, offset, colorGammaSampler) && SMAALumaEdgeDetectionPS(texcoord, offset, colorGammaSampler));
 	else
-		return (SMAALumaEdgeDetectionPS(texcoord, offset, colorGammaSampler) || SMAAColorEdgeDetectionPS(texcoord, offset, colorGammaSampler));
+		return ((SMAALumaEdgeDetectionPS(texcoord, offset, colorGammaSampler) + SMAAColorEdgeDetectionPS(texcoord, offset, colorGammaSampler))/2);
 }
 float4 SMAABlendingWeightCalculationWrapPS(
 	float4 position : SV_Position,
