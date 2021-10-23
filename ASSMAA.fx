@@ -31,7 +31,7 @@ uniform int EdgeDetectionType < __UNIFORM_COMBO_INT1
 uniform float EdgeDetectionThreshold < __UNIFORM_DRAG_FLOAT1
 	ui_min = 0.05; ui_max = 0.2; ui_step = 0.001;
 	ui_label = "Edge Detection Threshold";
-> = 0.075;
+> = 0.0625;
 
 uniform int MaxSearchSteps < __UNIFORM_SLIDER_INT1
 	ui_min = 1; ui_max = 112;
@@ -55,7 +55,7 @@ uniform float ContrastAdaptationFactor < __UNIFORM_DRAG_FLOAT1
 	ui_min = 1.0; ui_max = 8.0; ui_step = 0.01;
 	ui_label = "Local Contrast Adaptation Factor";
 	ui_tooltip = "Low values preserve detail, high values increase anti-aliasing effect";
-> = 1.50;
+> = 1.60;
 #endif
 
 uniform int DebugOutput < __UNIFORM_COMBO_INT1
